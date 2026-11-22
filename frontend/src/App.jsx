@@ -1,8 +1,8 @@
-
+﻿
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://codealpha-ecommercestore-d8sl.onrender.com/api";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -32,7 +32,7 @@ function App() {
   const [submitting, setSubmitting] = useState(false);
 
   const formatPrice = (price) =>
-    "₹" + Number(price || 0).toLocaleString("en-IN");
+    "â‚¹" + Number(price || 0).toLocaleString("en-IN");
 
   const showMessage = (text) => {
     setMessage(text);
@@ -377,7 +377,7 @@ function App() {
             className="cart-btn"
             onClick={() => setShowCart(true)}
           >
-            🛒 Cart ({cartCount})
+            ðŸ›’ Cart ({cartCount})
           </button>
         </div>
       </nav>
@@ -411,7 +411,7 @@ function App() {
                 className="primary-btn"
                 onClick={scrollToProducts}
               >
-                Shop Now →
+                Shop Now â†’
               </button>
             </div>
           </section>
@@ -419,19 +419,19 @@ function App() {
           {/* BENEFITS */}
           <section className="benefits">
             <div>
-              <span>🚚</span>
+              <span>ðŸšš</span>
               <h3>Fast Delivery</h3>
               <p>Convenient doorstep delivery</p>
             </div>
 
             <div>
-              <span>🔒</span>
+              <span>ðŸ”’</span>
               <h3>Secure Shopping</h3>
               <p>Shop with confidence</p>
             </div>
 
             <div>
-              <span>⭐</span>
+              <span>â­</span>
               <h3>Quality Products</h3>
               <p>Products selected for you</p>
             </div>
@@ -454,7 +454,7 @@ function App() {
                 onChange={(e) => setSearch(e.target.value)}
               />
 
-              <span>🔍</span>
+              <span>ðŸ”</span>
             </div>
 
             {/* CATEGORY FILTER */}
@@ -505,7 +505,7 @@ function App() {
 
                     <div className="product-info">
                       <p className="rating">
-                        ⭐ {product.rating}
+                        â­ {product.rating}
                       </p>
 
                       <h3>{product.name}</h3>
@@ -554,7 +554,7 @@ function App() {
               className="close-btn"
               onClick={() => setSelectedProduct(null)}
             >
-              ×
+              Ã—
             </button>
 
             <img
@@ -569,7 +569,7 @@ function App() {
 
               <h2>{selectedProduct.name}</h2>
 
-              <p>⭐ {selectedProduct.rating} / 5</p>
+              <p>â­ {selectedProduct.rating} / 5</p>
 
               <h3 className="product-price">
                 {formatPrice(selectedProduct.price)}
@@ -609,14 +609,14 @@ function App() {
               className="close-btn"
               onClick={() => setShowCart(false)}
             >
-              ×
+              Ã—
             </button>
 
             <h2>Your Shopping Cart</h2>
 
             {cart.length === 0 ? (
               <div className="empty-cart">
-                <span>🛒</span>
+                <span>ðŸ›’</span>
                 <h3>Your cart is empty</h3>
                 <p>Add some products to get started.</p>
 
@@ -654,7 +654,7 @@ function App() {
                               changeQuantity(item.id, -1)
                             }
                           >
-                            −
+                            âˆ’
                           </button>
 
                           <span>{item.quantity}</span>
@@ -725,7 +725,7 @@ function App() {
               className="close-btn"
               onClick={() => setAuthMode("")}
             >
-              ×
+              Ã—
             </button>
 
             <h2>
@@ -812,7 +812,7 @@ function App() {
             </div>
           ) : orders.length === 0 ? (
             <div className="empty-cart">
-              <span>📦</span>
+              <span>ðŸ“¦</span>
               <h3>No orders yet</h3>
 
               <button
@@ -846,7 +846,7 @@ function App() {
                       const productName =
                         item.product?.name || "Product";
 
-                      return `${productName} × ${item.quantity}`;
+                      return `${productName} Ã— ${item.quantity}`;
                     })
                     .join(", ")}
                 </p>
@@ -870,7 +870,7 @@ function App() {
         </div>
 
         <p className="copyright">
-          © 2026 ShopEase. All rights reserved.
+          Â© 2026 ShopEase. All rights reserved.
         </p>
       </footer>
     </div>
@@ -878,3 +878,4 @@ function App() {
 }
 
 export default App;
+
